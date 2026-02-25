@@ -38,7 +38,7 @@ Requirements: **.NET 8 SDK** and an installed **SQL Server** database server (e.
 1.  **Clone the repository:**
 
     ```bash
-    git clone [https://github.com/X3raFin/EntityFramework-project-with-console-UI.git](https://github.com/X3raFin/EntityFramework-project-with-console-UI.git)
+    git clone https://github.com/X3raFin/EntityFramework-project-with-console-UI.git
     cd EntityFramework-project-with-console-UI
     ```
 
