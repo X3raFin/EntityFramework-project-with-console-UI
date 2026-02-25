@@ -1,6 +1,7 @@
 ﻿using EF_lab4.Services;
 using EF_lab4.Tables;
 using Ninject;
+using Microsoft.Extensions.Configuration;
 
 namespace EF_lab4
 {
@@ -66,7 +67,11 @@ namespace EF_lab4
 
         static void Main(string[] args)
         {
-            using (var kernel = new StandardKernel(new ServiceModule(@"Server=KAPITANBOMBA\SQLEXPRESS;Database=Księgarnia;Trusted_Connection=True;TrustServerCertificate=True;")))
+            var configuration = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                .Build();
+            using (var kernel = new StandardKernel(new ServiceModule(configuration.GetConnectionString("DefaultConnection"))))
             {
                 var books = kernel.Get<IBookServices>();
                 var authors = kernel.Get<IAuthorsServices>();

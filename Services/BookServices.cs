@@ -1,10 +1,4 @@
 ﻿using EF_lab4.Tables;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EF_lab4.Services
 {
@@ -24,7 +18,7 @@ namespace EF_lab4.Services
 
         public string AddNewUnit(int _pub_house, int _author, string _title, decimal _price)
         {
-            try 
+            try
             {
                 if (dbContext.Książki.Any(b => b.Tytul == _title))
                 {
@@ -46,7 +40,8 @@ namespace EF_lab4.Services
                 dbContext.SaveChanges();
                 return "\nKsiążka została dodana pomyślnie.";
             }
-            catch(Exception ex) {
+            catch (Exception ex)
+            {
                 return $"\nWystąpił błąd podczas dodawania książki: {ex.Message}";
             }
         }
@@ -56,11 +51,12 @@ namespace EF_lab4.Services
             try
             {
                 var toRmv = dbContext.Książki.FirstOrDefault(k => k.Id_Ks == _bookID);
-                    dbContext.Książki.Remove(toRmv);
-                    dbContext.SaveChanges();
-                    return "\nKsiążka została usunięta pomyślnie.";
+                dbContext.Książki.Remove(toRmv);
+                dbContext.SaveChanges();
+                return "\nKsiążka została usunięta pomyślnie.";
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 return $"\nWystąpił błąd podczas usuwania książki: {ex.Message}";
             }
         }
@@ -100,7 +96,7 @@ namespace EF_lab4.Services
                 dbContext.SaveChanges();
                 return "Książka została zmodyfikowana pomyślnie.";
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 return $"Wystąpił błąd podczas edytowania książki: {ex.Message}";
             }
