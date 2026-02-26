@@ -10,6 +10,30 @@ Main project features:
 - **Database:** Persistent data storage using a relational database (SQL Server).
 - **Secure configuration:** Connection String management via the `appsettings.json` file.
 
+## ⚡ Interactive Demo
+
+Below you can see how the core features of the application work in practice:
+
+### Viewing Data
+
+Quickly display all records currently stored in the database.
+![Displaying the database](./Assets/KonsolaWyswietlanie.gif)
+
+### Adding Records
+
+Adding new entities to the database (e.g., adding a new publisher).
+![Adding a new record](./Assets/KonsolaDodawanie.gif)
+
+### Modifying Records
+
+Selecting a specific record by ID and modifying only the chosen fields.
+![Modifying a record](./Assets/KonsolaModyfikacja.gif)
+
+### Deleting Records
+
+Safely removing records from the database with built-in existence checks.
+![Deleting a record](./Assets/KonsolaUsuwanie.gif)
+
 ## 🛠 Tech Stack
 
 ### Application & Logic
@@ -27,7 +51,6 @@ Main project features:
 
 - **N-Tier Architecture** - Logical separation of the Data Access layer from business logic and presentation.
 - **Dependency Injection** - Implemented using the **Ninject** library.
-- **Repository Pattern** - Abstraction of the data layer that acts as a mediator between business logic and the database.
 - **Service Pattern** - Extraction of the application's business logic into separate classes.
 - **SOLID Principles** - Code organization with an emphasis on the Single Responsibility Principle.
 
@@ -38,7 +61,7 @@ Requirements: **.NET 8 SDK** and an installed **SQL Server** database server (e.
 1.  **Clone the repository:**
 
     ```bash
-    git clone [https://github.com/X3raFin/EntityFramework-project-with-console-UI.git](https://github.com/X3raFin/EntityFramework-project-with-console-UI.git)
+    git clone https://github.com/X3raFin/EntityFramework-project-with-console-UI.git
     cd EntityFramework-project-with-console-UI
     ```
 
